@@ -1,6 +1,7 @@
 body {
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
 }
 
 button {
@@ -57,7 +58,7 @@ header {
 /* main */
 
 main {
-    height: 700px;
+    height: 650px;
     background-image: url("./src/assets/cover.jpg");
     background-size: cover;
     background-repeat: no-repeat;
@@ -133,6 +134,37 @@ textarea {
 
 .submit:hover {
     background-color: #febe00;
+}
+
+/* modal */
+.modal-container {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 20;
+}
+
+.confirmModal {
+    width: 400px;
+    padding: 20px;
+    height: max-content;
+    background-color: rgb(239, 238, 233);
+    position: absolute;
+    top: 300px;
+    left: calc(50% - 220px);
+    z-index: 20;
+    border-radius: 10px;
+}
+
+.modal-btn {
+    padding: 10px;
+    font-size: large;
+    border: none;
+    background-color: #ff9620;
+    border-radius: 5px;
+    font-weight: 900;
 }
 
 @media(min-width:900px) {

@@ -3,7 +3,39 @@ import Header from "./components/Header"
 import Footer from "./components/Footer"
 
 function App() {
-  const [data, setData] = React.useState(null)
+  const [data, setData] = React.useState({
+    // from: "Bengaluru",
+    // to: "Delhi",
+    // time: "13:50",
+    // date: "12/12/2023"
+  })
+  const [confirmModal, setConfirmModal] = React.useState(false)
+
+  function handleInput(e) {
+    e.preventDefault()
+    setData(prev => {
+      return (
+        { ...prev, [e.target.name]: e.target.value }
+      )
+    })
+  }
+
+  function handleSubmit(e) {
+    if (data.time && data.date && data.from && data.to) {
+      setConfirmModal(true)
+    }
+    e.preventDefault()
+
+
+  }
+  function handleConfirmBtn() {
+    setConfirmModal(false)
+    setData(null)
+  }
+
+  console.log(data)
+  console.log(confirmModal)
+
   return (
     <>
       <Header />
@@ -18,27 +50,64 @@ function App() {
           <form action="#">
             <div className='pair-inputs'>
               <input type="text"
+                required
                 name="from"
+                value={data ? data.from : ""}
+                onChange={handleInput}
                 placeholder='Travel From' />
               <input type="text"
                 name="to"
+                value={data ? data.to : ""}
+                onChange={handleInput}
                 placeholder='Travel To' />
             </div>
+
             <div className='pair-inputs'>
               <input type="date"
-                name="date" />
-              <input type="time" name="time" />
+                name="date"
+                value={data ? data.date : ""}
+                onChange={handleInput}
+              />
+
+              <input
+                type="time"
+                name="time"
+                value={data ? data.time : ""}
+                onChange={handleInput} />
             </div>
-            <textarea name="addOn"
+
+            <textarea
+              name="addOn"
+              onChange={handleInput}
+              value={data ? data.addOn : ""}
               placeholder='Additional Requirements...'>
-
             </textarea>
-            <button className="submit"
 
-              type='submit'>Submit</button>
+            <button
+              className="submit"
+              onClick={handleSubmit}
+              type='submit'>
+              Submit
+            </button>
           </form>
         </div>
       </main>
+      {confirmModal &&
+        <div className='modal-container'>
+          <div className='confirmModal'>
+            <h3>Confirmation Details</h3>
+            <p>Travel From: {data.from}</p>
+            <p>Travel To: {data.to}</p>
+            <p>Travel Date: {data.date}</p>
+            <p>Travel Time: {data.time}</p>
+            {data.addOn && <p>Additional Reqs: {data.addOn}</p>}
+            <button
+              onClick={handleConfirmBtn}
+              className='modal-btn'>Book Again</button>
+          </div>
+        </div>
+      }
+
       <Footer />
     </>
   )
