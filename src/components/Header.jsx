@@ -6,7 +6,12 @@ export default function Header() {
             <header>
                 <img src={taxi} alt="taxi icons Taxi icons created by Assia Benkerroum- Flaticon" width={55} />
                 <h2 className="title"> <span className="first-word">Flexi</span> Taxi</h2>
-                <button className="book-now">Book Now</button>
+                <button
+                    onClick={() => window.scrollTo({
+                        top: 200,
+                        behavior: "smooth"
+                    })}
+                    className="book-now">Book Now</button>
             </header>
         </div>
     )
