@@ -179,7 +179,7 @@ textarea {
     font-weight: 900;
 }
 
-@media(min-width:900px) {
+@media(min-width:700px) {
     header {
         justify-content: center;
         padding: 0.5em;
@@ -233,7 +233,7 @@ textarea {
     }
 
     form {
-        width: 40%;
+        width: 50%;
     }
 }
 
