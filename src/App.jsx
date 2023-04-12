@@ -42,10 +42,10 @@ function App() {
       <main>
         <div className="form-container">
           <div className='desc'>
-            <h2 className='form-desc'>We know plan changes. Thats why we are providing flexible
-              cabs.
+            <h2 className='form-desc'>We know Plans Change <br /> <span className='sub-title'> That's why we are providing Flexible
+              Cabs</span>
             </h2>
-            <h2 className='cancel-desc'>Cancel Anytime.</h2>
+            <h2 className='cancel-desc'>Cancel Anytime</h2>
           </div>
           <form action="#">
             <div className='pair-inputs'>
