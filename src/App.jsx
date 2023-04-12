@@ -37,7 +37,7 @@ function App() {
   console.log(confirmModal)
 
   return (
-    <>
+    <div className="positionModal">
       <Header />
       <main>
         <div className="form-container">
@@ -109,7 +109,7 @@ function App() {
       }
 
       <Footer />
-    </>
+    </div>
   )
 }
 export default App

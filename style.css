@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     box-sizing: border-box;
+    height: 100vh;
 }
 
 button {
@@ -9,6 +10,10 @@ button {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     letter-spacing: 0.5px;
     color: #1c1c1c;
+}
+
+.positionModal {
+    position: relative;
 }
 
 /* header items */
@@ -152,20 +157,20 @@ textarea {
 .modal-container {
     position: absolute;
     width: 100vw;
-    height: 100vh;
+    height: 100%;
     top: 0;
     background-color: rgba(0, 0, 0, 0.9);
     z-index: 20;
 }
 
 .confirmModal {
-    width: 400px;
+    width: 350px;
     padding: 20px;
     height: max-content;
     background-color: rgb(239, 238, 233);
     position: absolute;
     top: 200px;
-    left: calc(50% - 220px);
+    left: calc(50% - 195px);
     z-index: 20;
     border-radius: 10px;
 }
@@ -226,8 +231,6 @@ textarea {
         text-align: left;
     }
 
-
-
     .cancel-desc {
         margin: 10px auto 10px 0;
     }
@@ -237,10 +240,17 @@ textarea {
     }
 }
 
-@media (max-width: 300px) {
+@media (max-width: 400px) {
     form {
         padding: 5px
     }
+
+    .confirmModal {
+        width: fit-content;
+        padding: 2em;
+        left: calc(50% - 125px);
+    }
+
 }
 
 
