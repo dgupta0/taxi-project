@@ -48,33 +48,32 @@ function App() {
             <h2 className='cancel-desc'>Cancel Anytime</h2>
           </div>
           <form action="#">
-            <div className='pair-inputs'>
-              <input type="text"
-                required
-                name="from"
-                value={data ? data.from : ""}
-                onChange={handleInput}
-                placeholder='Travel From' />
-              <input type="text"
-                name="to"
-                value={data ? data.to : ""}
-                onChange={handleInput}
-                placeholder='Travel To' />
-            </div>
 
-            <div className='pair-inputs'>
-              <input type="date"
-                name="date"
-                value={data ? data.date : ""}
-                onChange={handleInput}
-              />
+            <input type="text"
+              required
+              name="from"
+              value={data ? data.from : ""}
+              onChange={handleInput}
+              placeholder='Travel From' />
+            <input type="text"
+              name="to"
+              value={data ? data.to : ""}
+              onChange={handleInput}
+              placeholder='Travel To' />
 
-              <input
-                type="time"
-                name="time"
-                value={data ? data.time : ""}
-                onChange={handleInput} />
-            </div>
+
+
+            <input type="date"
+              name="date"
+              value={data ? data.date : ""}
+              onChange={handleInput}
+            />
+
+            <input
+              type="time"
+              name="time"
+              value={data ? data.time : ""}
+              onChange={handleInput} />
 
             <textarea
               name="addOn"
