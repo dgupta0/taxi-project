@@ -72,6 +72,7 @@ function App() {
             <input
               type="time"
               name="time"
+              placeholder='-:-- --'
               value={data ? data.time : ""}
               onChange={handleInput} />
 
