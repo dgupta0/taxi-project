@@ -87,7 +87,7 @@ function App() {
               className="submit"
               onClick={handleSubmit}
               type='submit'>
-              Submit
+              Book Now
             </button>
           </form>
         </div>
